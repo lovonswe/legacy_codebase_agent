@@ -14,7 +14,10 @@
     "axios": "^1.9.0",
     "dotenv": "^16.5.0",
     "openai": "^4.103.0",
+    "simple-git": "^3.27.0",
     "tree-sitter": "^0.21.1",
-    "tree-sitter-javascript": "^0.23.1"
+    "tree-sitter-javascript": "^0.23.1",
+    "tree-sitter-typescript": "^0.23.2",
+    "unzipper": "^0.12.3"
   }
 }

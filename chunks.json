@@ -1,38 +1,478 @@
 [
   {
+    "id": "function_declaration@11-27",
     "type": "function_declaration",
-    "text": "function curry(fn) {\n    return function curried(...args) {\n      if (args.length >= fn.length) {\n        return fn.apply(this, args);\n      } else {\n        return function(...args2) {\n          return curried.apply(this, args.concat(args2));\n        };\n      }\n    };\n  }",
-    "startLine": 79,
-    "endLine": 89
+    "name": "App",
+    "text": "function App() {\n  const product = {\n    name : \"Nahid\",\n    description : \"I am nahid Hasan Lovon\",\n    image: \"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1-1024x824.jpg\"\n  }\n  return (\n    <div >\n      {/* <RecipeReviewCard />\n      <CardGpt product={product}/> */}\n      {/* <ProductCard />\n      <ReciepeCard /> */}\n      <ProductDetails />\n      <div>hi</div>\n    </div>\n  );\n}",
+    "startLine": 11,
+    "endLine": 27,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/App.js",
+    "language": "js"
   },
   {
+    "id": "function_declaration@21-56",
     "type": "function_declaration",
-    "text": "function compose(...fns) {\n    return function(x) {\n      return fns.reduceRight((v, f) => f(v), x);\n    };\n  }",
-    "startLine": 92,
-    "endLine": 96
+    "name": "App",
+    "text": "function App() {\n  const product = {\n    name: \"Nahid\",\n    description: \"I am nahid Hasan Lovon\",\n    image: \"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1-1024x824.jpg\"\n  }\n  return (\n\n    <BrowserRouter>\n      <Navbar />\n      <Sidebar />\n      <CartMini />\n      <ShoppingCart />\n      <main>\n        <Routes>\n          <Route path='/' element={<Home />} />\n          <Route path='place-order' element={<OrderPlacement />} />\n          <Route path='search' element={<SearchResultPage />} />\n          <Route path={'*'} element={<Offer />} />\n        </Routes>\n      </main>\n    </BrowserRouter>\n    // <div style={{backgroundColor:\"none\"}}>\n    //   {/* {/* <RecipeReviewCard />\n    //    <CardGpt product={product}/> */}\n    //  {/* <ProductCard />  */}\n    //    {/* <ReciepeCard /> */}\n    //    {/* <Navbar />\n    //    <Home />\n    //    <ShoppingCart />        */}\n    //             {/* <ProductDetails /> */}\n    //             {/* <Sidebars /> */}\n    //             <Offer />\n    // </div>\n  );\n}",
+    "startLine": 21,
+    "endLine": 56,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/App.js",
+    "language": "js"
   },
   {
+    "id": "function_declaration@10-204",
     "type": "function_declaration",
-    "text": "function memoize(fn) {\n    const cache = new Map();\n    return function(...args) {\n      const key = JSON.stringify(args);\n      if (cache.has(key)) return cache.get(key);\n      const result = fn.apply(this, args);\n      cache.set(key, result);\n      return result;\n    };\n  }",
-    "startLine": 99,
-    "endLine": 108
+    "name": "Home",
+    "text": "function Home() {\n    const { open } = useSidebarStore();\n    const collegeImage = \"https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-622/Default/stores/chaldal/components/landingPage2/LandingPage/images/imageBanner.png\";\n    const chaldalLogo = \"https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-450/Default/components/header/Header/images/logo-small.png?q=low&webp=1&alpha=1\";\n    const products = [\n        {\n            id: '1',\n            name: 'Mango 1',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '2',\n            name: 'Mango 2',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '3',\n            name: 'Mango 3',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '4',\n            name: 'Mango 4',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '5',\n            name: 'Mango 5',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '6',\n            name: 'Mango 6',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '7',\n            name: 'Mango 7',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '8',\n            name: 'Mango 7',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '9',\n            name: 'Mango 8',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '10',\n            name: 'Mango 9',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '11',\n            name: 'Mango 10',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '12',\n            name: 'Mango 11',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '13',\n            name: 'Mango 12',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '14',\n            name: 'Mango 13',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '15',\n            name: 'Mango 14',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '16',\n            name: 'Mango 15',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '17',\n            name: 'Mango 16',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '18',\n            name: 'Mango 17',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n        {\n            id: '19',\n            name: 'Mango 18',\n            description: 'Fruit', subCategory: 'Fruit',\n            isSubCategory: true,\n            subCategoryImage: \"https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1\" \n        },\n\n    ]\n    // const products = [];\n    return (\n        <Contents theme={theme} className=\"contents\" open={open}>\n            <div className='_root'>\n                <div className='landing-banner'>\n                    <div className='title-search'>\n                        <div className='margin'>\n                            <div className='moto'>\n                                Grocery Delivered at your Doorstep\n                            </div>\n                            <div style={{ position: 'relative', width: '600px', marginTop:'30px' }}>\n                                <input\n                                    type=\"text\"\n                                    style={{\n                                        width: '80%',\n                                        padding: '10px 30px 10px 10px',\n                                        border: '1px solid #ccc',\n                                        borderRadius: '5px',\n                                        fontSize: '16px',\n                                        //color: '#888',\n                                        outline: 'none', // Remove default focus outline\n\n                                    }}\n                                    placeholder=\"Search for products (e.g. eggs, milk, potato)\"\n                                />\n                                <FontAwesomeIcon\n                                    icon={faSearch}\n                                    style={{\n                                        position: 'absolute',\n                                        top: '50%',\n                                        right: '100px',\n                                        transform: 'translateY(-50%)',\n                                        color: '#888',\n                                    }}\n                                />\n                            </div>\n                        </div>\n                    </div>\n                    <div className='collegeImageContainer'>\n                        <img src={collegeImage} height={\"437px\"} alt='collegeImage'/>\n                    </div>\n                </div>\n                <DashboardRow />\n                <div className='slider-container-wrapper'>\n                    <div className='popular-categories'>\n                        Popular Categories\n                    </div>\n                    <div className='slider-container'>\n                    <CardCarousel products={products}/>\n                    </div>\n                </div>\n            </div>\n        </Contents>\n    )\n}",
+    "startLine": 10,
+    "endLine": 204,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/assets/Home.js",
+    "language": "js"
   },
   {
+    "id": "function_declaration@11-32",
     "type": "function_declaration",
-    "text": "function debounce(fn, delay) {\n    let timeoutId;\n    return function(...args) {\n      clearTimeout(timeoutId);\n      timeoutId = setTimeout(() => fn.apply(this, args), delay);\n    };\n  }",
-    "startLine": 111,
-    "endLine": 117
+    "name": "CustomizedInputBase",
+    "text": "function CustomizedInputBase() {\n    const options = [\n        { label: 'The Godfather', id: 1 },\n        { label: 'Pulp Fiction', id: 2 },\n    ];\n\n    return (\n        <Autocomplete\n            freeSolo\n            disableClearable\n            options={options}\n            getOptionLabel={(option) => option.label} // Specify how to get the label from each option\n            renderInput={(params) => (\n                <CustomInputBase\n                    {...params}\n                    placeholder=\"Search Google Maps\"\n                    inputProps={{ ...params.inputProps, 'aria-label': 'search google maps' }}\n                />\n            )}\n        />\n    );\n}",
+    "startLine": 11,
+    "endLine": 32,
+    "parentType": "export_statement",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 2,
+    "filePath": "repos/chaldal/src/components/CustomizedInputBase.js",
+    "language": "js"
   },
   {
+    "id": "function_declaration@34-56",
     "type": "function_declaration",
-    "text": "function throttle(fn, limit) {\n    let inThrottle;\n    return function(...args) {\n      if (!inThrottle) {\n        fn.apply(this, args);\n        inThrottle = true;\n        setTimeout(() => inThrottle = false, limit);\n      }\n    };\n  }",
-    "startLine": 120,
-    "endLine": 129
+    "name": "CustomInputBase",
+    "text": "function CustomInputBase(props) {\n    return (\n        <Paper\n            component=\"form\"\n            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}\n        >\n            <IconButton sx={{ p: '10px' }} aria-label=\"menu\">\n                <MenuIcon />\n            </IconButton>\n            <InputBase\n                {...props}\n                sx={{ ml: 1, flex: 1 }}\n            />\n            <IconButton type=\"button\" sx={{ p: '10px' }} aria-label=\"search\">\n                <SearchIcon />\n            </IconButton>\n            <Divider sx={{ height: 28, m: 0.5 }} orientation=\"vertical\" />\n            <IconButton color=\"primary\" sx={{ p: '10px' }} aria-label=\"directions\">\n                <DirectionsIcon />\n            </IconButton>\n        </Paper>\n    );\n}",
+    "startLine": 34,
+    "endLine": 56,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/CustomizedInputBase.js",
+    "language": "js"
   },
   {
-    "type": "class_declaration",
-    "text": "class LinkedList {\n    constructor() {\n      this.head = null;\n      this.tail = null;\n      this.length = 0;\n    }\n  \n    // Add to end of list\n    append(value) {\n      const newNode = { value, next: null };\n      if (!this.head) {\n        this.head = newNode;\n        this.tail = newNode;\n      } else {\n        this.tail.next = newNode;\n        this.tail = newNode;\n      }\n      this.length++;\n    }\n  \n    // Add to beginning of list\n    prepend(value) {\n      const newNode = { value, next: this.head };\n      this.head = newNode;\n      if (!this.tail) this.tail = newNode;\n      this.length++;\n    }\n  \n    // Remove by value\n    \n  }",
-    "startLine": 136,
-    "endLine": 166
+    "id": "function_declaration@10-49",
+    "type": "function_declaration",
+    "name": "DashboardRow",
+    "text": "function DashboardRow() {\n  return (\n    <div className='dashboard-row'>\n        <div>\n            <IconButton>\n                <FoodBankOutlinedIcon fontSize=\"large\"/>\n                <Typography>\n                    <span>+15000 products</span> to shop from\n                </Typography>\n            </IconButton>\n        </div>\n\n        <div>\n            <IconButton>\n                <CurrencyExchangeOutlinedIcon fontSize=\"large\"/>\n                <Typography>\n                    Pay <span>after</span> receiving products\n                </Typography>\n            </IconButton>\n        </div>\n\n        <div>\n            <IconButton>\n                <DeliveryDiningOutlinedIcon fontSize=\"large\"/>\n                <Typography>\n                Get your delivery within <span>1 hour</span>\n                </Typography>\n            </IconButton>\n        </div>\n        <div>\n            <IconButton>\n                <RedeemOutlinedIcon fontSize=\"large\"/>\n                <Typography>\n                Get offers that <span>Save Money</span>\n                </Typography>\n            </IconButton>\n        </div>\n    </div>\n  )\n}",
+    "startLine": 10,
+    "endLine": 49,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/DashboardRow.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@17-95",
+    "type": "function_declaration",
+    "name": "Navbar",
+    "text": "function Navbar() {\n    const [searchKey, setSearchKey] = useState('');\n    const [searchResult, setSearchResult] = useState([]);\n    const {products} = useProductStore();\n    const {searchedProducts, updateSearchedProduct} = usesearchedProductStore();\n    const navigate = useNavigate();\n    const chaldalLogo = \"https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-450/Default/components/header/Header/images/logo-small.png?q=low&webp=1&alpha=1\";\n    const { updateSidebarStatus } = useSidebarStore();\n    const handleToggle = (e) => {\n        updateSidebarStatus(!e);\n    }\n\n    const handleSearch = ()=> {\n        const result = products.filter((product)=> {\n            return product.productName.toLowerCase().includes(searchKey.toLowerCase()) ? true : false;\n        })\n\n        updateSearchedProduct(result);\n        navigate('/search');\n    }\n    return (\n        <div className='navbar'>\n            <Hamburger onToggle={(e) => { handleToggle(e) }} />\n            <NavLink to={\"/\"}>\n                <IconButton>\n                    <img src={chaldalLogo} height={\"40px\"} />\n                </IconButton>\n            </NavLink>\n            <div className='input-container'>\n                <input\n                    className='input-x'\n                    type=\"text\"\n                    style={{\n                        width: '80%',\n                        padding: '10px 30px 10px 10px',\n                        border: '1px solid #ccc',\n                        borderRadius: '5px',\n                        fontSize: '16px',\n                        //color: '#888',\n                        outline: 'none', // Remove default focus outline\n                    }}\n                    placeholder=\"Search for products (e.g. eggs, milk, potato)\"\n                    onChange={(e) => setSearchKey(e.target.value)}\n                    value={searchKey}\n                />\n                <FontAwesomeIcon\n                    className='search-icon'\n                    icon={faSearch}\n                    style={{\n                        position: 'absolute',\n                        top: '45%',\n                        right: '18%',\n                        transform: 'translateY(-50%)',\n                        color: '#888',\n\n                    }}\n                    cursor={'pointer'}\n                    onClick={handleSearch}\n                />\n            </div>\n            <div className='location'>\n                <IconButton sx={{ color: '#ff4e56' }}>\n                    <LocationOnOutlinedIcon />\n                    <Typography>\n                        Dhaka\n                    </Typography>\n                    <KeyboardArrowDownIcon />\n                </IconButton>\n            </div>\n            <div className='login-button'>\n                <IconButton >\n                    <Typography sx={{ color: 'white', fontSize: '18px' }}>\n                        Login\n                    </Typography>\n                </IconButton>\n            </div>\n        </div>\n    )\n}",
+    "startLine": 17,
+    "endLine": 95,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/Navbar.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@21-123",
+    "type": "function_declaration",
+    "name": "ProductDetails",
+    "text": "function ProductDetails({ product }) {\n  const url2 =\n    \"https://chaldn.com/_mpimage/date-crown-lulu-dates-400-gm?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D129300&q=best&v=1&m=400&webp=1\";\n  const cashOnDeliveryUrl =\n    \"https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-450/Default/stores/chaldal/components/page/BrandComponent/images/cash-on-delivery.png?q=low&webp=1&alpha=1\";\n  const americanExpress = \"https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-450/Default/components/shared/NewFooter/images/Amex.png?q=low&webp=1&alpha=1\";\n  const masterCard = \"https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-450/Default/components/shared/NewFooter/images/mastercard.png?q=low&webp=1&alpha=1\";\n  const decreaseCartCount = () => {};\n  const increaseCartCount = () => {};\n  return (\n\n      <div className=\"root\">\n        <div className=\"top\">\n          <div className=\"image-container\">\n            <CardMedia\n              component=\"img\"\n              image={url2}\n              alt=\"prodcut\"\n              className=\"product-image\"\n            />\n          </div>\n          <div className=\"info-container\">\n            <div className=\"title-unit\">\n              <div className=\"title\">Date Crown Lulu Dates </div>\n              <div className=\"unit\">400 gm</div>\n            </div>\n\n            <div className=\"price-discount\">\n              <div className=\"price\">\n                <FontAwesomeIcon\n                  className=\"taka-icon\"\n                  icon=\"fa-solid fa-bangladeshi-taka-sign\"\n                />\n                <span className=\"unit-price\">{\"100\"}</span>\n              </div>\n              <div className=\"discount\">14 % OFF</div>\n            </div>\n\n            <div className=\"add-and-buy-container\">\n              <div className=\"card-foreground-footer\">\n                <RemoveOutlinedIcon\n                  className=\"remove\"\n                  onClick={(e) => decreaseCartCount(e)}\n                />\n                <div className=\"cart-item-count-in-footer\">{`26 in bag`}</div>\n                <AddOutlinedIcon className=\"add\" onClick={increaseCartCount} />\n              </div>\n              <div className=\"buy-now\">Buy now</div>\n            </div>\n\n            <Divider />\n            <div className=\"info\">\n              <ul className=\"info-list\">\n                <li>Hi This is Khejur</li>\n                <li>Would you like to buy?</li>\n                <li>Hi This is Khejur</li>\n                <li>Would you like to buy?</li>\n                <li>\n                  Hi This is Khejur Hi This is Khejur Hi This is Khejur Hi This\n                  is Khejur\n                </li>\n                <li>Would you like to buy?</li>\n                <li>Hi This is Khejur</li>\n                <li>Would you like to buy?</li>\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div className=\"bottom\">\n          <Stack className=\"delivery-info\" direction={\"row\"} justifyContent={\"space-between\"} >\n            <Grid className=\"thirty-minutes-delivery\">\n              <IconButton>\n              <img src={cashOnDeliveryUrl} style={{minHeight: '10px', maxHeight: '40px'}} />\n                <Typography>Cash on delivery</Typography>\n              </IconButton>\n              <IconButton>\n                <img src={cashOnDeliveryUrl} style={{minHeight: '10px', maxHeight: '40px'}}/>\n                <Typography>Cash on delivery</Typography>\n              </IconButton>\n            </Grid>\n            <Grid>\n            <IconButton>\n              <Typography>Pay with</Typography>\n              </IconButton>\n              <IconButton>\n                <img src={masterCard} style={{minHeight: '10px', maxHeight: '40px'}}/>\n              </IconButton>\n              <IconButton>\n                <img src={masterCard} style={{minHeight: '10px', maxHeight: '40px'}}/>\n              </IconButton>\n              <IconButton>\n                <img src={masterCard} style={{minHeight: '10px', maxHeight: '40px'}}/>\n              </IconButton>\n              <IconButton>\n                <img src={masterCard} style={{minHeight: '10px', maxHeight: '40px'}}/>\n              </IconButton>\n            </Grid>\n          </Stack>\n        </div>\n      </div>\n\n  );\n}",
+    "startLine": 21,
+    "endLine": 123,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/ProductDetails.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@11-38",
+    "type": "function_declaration",
+    "name": "CustomizedInputBase",
+    "text": "function CustomizedInputBase({ params }) {\n  const inputRef = params?.inputProps?.ref;\n\n  return (\n    <Paper\n      component=\"form\"\n      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}\n    >\n      <IconButton sx={{ p: '10px' }} aria-label=\"menu\">\n        <MenuIcon />\n      </IconButton>\n      <InputBase\n        inputRef={inputRef} // Pass inputRef directly to the InputBase component\n        {...params.inputProps} // Spread inputProps onto the InputBase component\n        sx={{ ml: 1, flex: 1 }}\n        placeholder=\"Search Google Maps\"\n        inputProps={{ 'aria-label': 'search google maps' }}\n      />\n      <IconButton type=\"button\" sx={{ p: '10px' }} aria-label=\"search\">\n        <SearchIcon />\n      </IconButton>\n      <Divider sx={{ height: 28, m: 0.5 }} orientation=\"vertical\" />\n      <IconButton color=\"primary\" sx={{ p: '10px' }} aria-label=\"directions\">\n        <DirectionsIcon />\n      </IconButton>\n    </Paper>\n  );\n}",
+    "startLine": 11,
+    "endLine": 38,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/SearchComponent.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@40-47",
+    "type": "function_declaration",
+    "name": "SearchComponent",
+    "text": "function SearchComponent() {\n  return (\n    <Autocomplete\n      freeSolo\n      renderInput={(params) => <CustomizedInputBase params={params} />}\n    />\n  );\n}",
+    "startLine": 40,
+    "endLine": 47,
+    "parentType": "export_statement",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 2,
+    "filePath": "repos/chaldal/src/components/SearchComponent.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@29-193",
+    "type": "function_declaration",
+    "name": "ProductCard",
+    "text": "function ProductCard({ product }) {\n  const [cartCount, setCartCount] = useState(product.addedInCart);\n  const [isModalOpen, setIsModalOpen] = useState(false);\n  const { products, updateProduct } = useProductStore();\n  const { itemsInCart, updateCount } = usecartItemCountStore();\n\n  const increaseCartCount = (e) => {\n    setCartCount((curr) => {\n      const newProduct = { ...product, addedInCart: curr + 1 };\n      updateProduct(newProduct);\n      if (curr === 0) {\n        updateCount(itemsInCart + 1);\n      }\n      return curr + 1;\n    });\n  };\n  const decreaseCartCount = (event) => {\n    event.stopPropagation();\n    setCartCount((curr) => {\n\n      const newProduct = { ...product, addedInCart: curr - 1 };\n      updateProduct(newProduct);\n      if (curr === 1) {\n        updateCount(itemsInCart - 1);\n      }\n      return curr - 1;\n    });\n\n    \n    // setCartCount((curr) => curr - 1);\n    // const clickedElement = e.target;\n    // if (clickedElement.classList.contains('remove')) {\n    //   setCartCount((curr) => {\n\n    //     const newProduct = { ...product, addedInCart: curr - 1 };\n    //     updateProduct(newProduct);\n    //     if(curr === 1){\n    //       updateCount(itemsInCart-1);\n    //     }\n    //     return curr - 1;\n    //   });\n    // }\n    // else {\n    //   setCartCount((curr) => {\n    //     const newProduct = { ...product, addedInCart: curr - 2 };\n    //     updateProduct(newProduct);\n    //     if(curr === 1){\n    //       updateCount(itemsInCart-1);\n    //     }\n    //     return curr - 2;\n    //   });\n    // }\n\n\n    //product.addedInCart = cartCount;\n    // const newProduct = await { ...product, addedInCart: cartCount };\n    // updateProduct(newProduct);\n  };\n\n  const handleModal = () => {\n    setIsModalOpen((curr) => !curr)\n  }\n\n  useEffect(() => {\n    products.map((currProduct) => {\n      if (currProduct.id === product.id) { \n        setCartCount(currProduct.addedInCart); \n      }\n    })\n  }, [products])\n  return (\n    <>\n      <div className=\"card-container\">\n        <div className=\"card-background\">\n          <div className=\"product-image-wrapper\">\n            <CardMedia\n              component=\"img\"\n              height=\"154\"\n              image={product.productImage}\n              alt=\"prodcut\"\n              className=\"product-image\"\n            />\n          </div>\n          <div className=\"product-title-wrapper\"></div>\n          <div className=\"product-title\">{product.productName}</div>\n          <div className=\"measurement-wrapper\">\n            <div className=\"measurement\">{product.weight}</div>\n          </div>\n          <div className=\"price-container-wrapper\">\n            <div className=\"price-container\">\n              <FontAwesomeIcon\n                className=\"dollar-icon\"\n                icon=\"fa-solid fa-bangladeshi-taka-sign\"\n              />\n              <span className=\"amount\">{product.unitPrice}</span>\n            </div>\n          </div>\n          <div className=\"card-footer\"></div>\n        </div>\n\n        <div className=\"card-foreground\">\n          <div className=\"details-and-add-to-cart-wrapper\">\n            <div className=\"add-to-cart\" onClick={increaseCartCount}>\n              {cartCount > 0 ? (\n                <>\n                  <div className=\"total-price\">\n                    <div className=\"price-container\">\n                      <FontAwesomeIcon\n                        className=\"dollar-icon-1\"\n                        icon=\"fa-solid fa-bangladeshi-taka-sign\"\n                      />\n                      <span className=\"amount\" style={{ color: \"white\" }}>\n                        {product.unitPrice * cartCount}\n                      </span>\n                    </div>\n                  </div>\n                  <div className=\"adder-remover\">\n                    <RemoveCircleOutlineOutlinedIcon\n                      className=\"icon-hover\"\n                      sx={{ fontSize: \"40px\" }}\n                      onClick={decreaseCartCount}\n                    />\n                    <div className=\"cart-item-count\">{cartCount}</div>\n                    <AddCircleOutlineOutlinedIcon\n                      className=\"icon-hover\"\n                      sx={{ fontSize: \"40px\" }}\n                    />\n                  </div>\n                  {/* <div className=\"add-message\">Add to cart</div> */}\n                  <div className=\"in-bag\">In bag</div>\n                </>\n              ) : (\n                <div className=\"cart-item-count\">Add to cart</div>\n              )}\n            </div>\n            <div className=\"details-container-wrapper\" onClick={handleModal}>\n              <div className=\"details-container\">\n                <span className=\"amount\">Details</span>\n                <FontAwesomeIcon\n                  className=\"details-icon\"\n                  icon=\"fa-solid fa-angle-right\"\n                />\n              </div>\n            </div>\n          </div>\n          {cartCount > 0 ? (\n            <div className=\"card-foreground-footer\">\n              <RemoveOutlinedIcon className=\"remove\" onClick={(e) => decreaseCartCount(e)} />\n              <div className=\"cart-item-count-in-footer\">{`${cartCount} in bag`}</div>\n              <AddOutlinedIcon className=\"add\" onClick={increaseCartCount} />\n            </div>\n          ) : (\n            <div className=\"card-footer\">\n              <IconButton onClick={increaseCartCount}>\n                <AddShoppingCartIcon color=\"success\" />\n                <Typography color={\"#ff4d4d\"} fontWeight={700} marginLeft={1}> Add to bag</Typography>\n              </IconButton>\n            </div>\n          )}\n        </div>\n      </div>\n      <TransitionsModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />\n    </>\n  );\n}",
+    "startLine": 29,
+    "endLine": 193,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/card/ProductCard.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@5-33",
+    "type": "function_declaration",
+    "name": "ProductCategoryCard",
+    "text": "function ProductCategoryCard({ product, boxShadow, isSubCategory,  isSubSubCategory}) {\n  const categoryName = \"Laundry Laundry Laundry Laundry\";\n  const url2 = \"https://chaldn.com/_mpimage/date-crown-lulu-dates-400-gm?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D129300&q=best&v=1&m=400&webp=1\";\n\n  const categoryCardStyle = (shadow) => {\n    return {\n      boxShadow: shadow ? '0px 4px 8px rgba(0, 0, 0, 0.1)' : 'none',\n    };\n  };\n\n  return (\n    <>\n      <div className=\"category-cart\" style={categoryCardStyle(true)}>\n        <div className=\"image-wrapper\">\n          <CardMedia\n            component=\"img\"\n            height=\"210\"\n            image={isSubCategory? product.subCategoryImage : isSubSubCategory? product.subsubcategoryImage : null}\n            alt=\"prodcut\"\n            className=\"category-image\"\n          />\n        </div>\n        <div className=\"title\">\n          {isSubCategory? product.subCategory : isSubSubCategory? product.subsubCategory : null}\n        </div>\n      </div>\n    </>\n  );\n}",
+    "startLine": 5,
+    "endLine": 33,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/card/ProductCategoryCard.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@5-32",
+    "type": "function_declaration",
+    "name": "ReciepeCard",
+    "text": "function ReciepeCard({ product }) {\n  const categoryName = \"Laundry Laundry Laundry Laundry\";\n  const url2 = \"https://chaldn.com/_mpimage/date-crown-lulu-dates-400-gm?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D129300&q=best&v=1&m=400&webp=1\";\n  const url3 = \"https://chaldn.com/_mpimage/nescafe-hot-latte-coffee?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D131795&q=low&v=1&m=300&webp=1\";\n  return (\n    <>\n        <div style={{border: \"1px solid red\" , position: \"fixed\", width: \"100%\"}}>\n            hi\n        </div>\n     \n        <div className=\"reciepe-image-wrapper\">\n          <CardMedia\n            component=\"img\"\n            // height=\"200\"\n            // width=\"200px\"\n            image={url3}\n            alt=\"prodcut\"\n            className=\"category-image\"\n          />\n          <div className=\"reciepe-title\">\n            <span style={{fontSize: \"22px\"}}>Chicken Churi in mustard oil</span>\n            <br/>\n            Cook Time : 60 Mins\n          </div>\n        </div>\n    </>\n  );\n}",
+    "startLine": 5,
+    "endLine": 32,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/card/ReciepeCard.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@29-112",
+    "type": "function_declaration",
+    "name": "RecipeReviewCard",
+    "text": "function RecipeReviewCard() {\n  const [expanded, setExpanded] = React.useState(false);\n\n  const handleExpandClick = () => {\n    setExpanded(!expanded);\n  };\n\n  return (\n    <Card sx={{ maxWidth: 345 }}>\n      <CardHeader\n        avatar={\n          <Avatar sx={{ bgcolor: red[500] }} aria-label=\"recipe\">\n            R\n          </Avatar>\n        }\n        action={\n          <IconButton aria-label=\"settings\">\n            <MoreVertIcon />\n          </IconButton>\n        }\n        title=\"Shrimp and Chorizo Paella\"\n        subheader=\"September 14, 2016\"\n      />\n      <CardMedia\n        component=\"img\"\n        height=\"394\"\n        image=\"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1-1024x824.jpg\"\n        alt=\"Paella dish\"\n      />\n      <CardContent>\n        <Typography variant=\"body2\" color=\"text.secondary\">\n          This impressive paella is a perfect party dish and a fun meal to cook\n          together with your guests. Add 1 cup of frozen peas along with the mussels,\n          if you like.\n        </Typography>\n      </CardContent>\n      <CardActions disableSpacing>\n        <IconButton aria-label=\"add to favorites\">\n          <FavoriteIcon />\n        </IconButton>\n        <IconButton aria-label=\"share\">\n          <ShareIcon />\n        </IconButton>\n        <ExpandMore\n          expand={expanded}\n          onClick={handleExpandClick}\n          aria-expanded={expanded}\n          aria-label=\"show more\"\n        >\n          <ExpandMoreIcon />\n        </ExpandMore>\n      </CardActions>\n      <Collapse in={expanded} timeout=\"auto\" unmountOnExit>\n        <CardContent>\n          <Typography paragraph>Method:</Typography>\n          <Typography paragraph>\n            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set\n            aside for 10 minutes.\n          </Typography>\n          <Typography paragraph>\n            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over\n            medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring\n            occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a\n            large plate and set aside, leaving chicken and chorizo in the pan. Add\n            pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook,\n            stirring often until thickened and fragrant, about 10 minutes. Add\n            saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.\n          </Typography>\n          <Typography paragraph>\n            Add rice and stir very gently to distribute. Top with artichokes and\n            peppers, and cook without stirring, until most of the liquid is absorbed,\n            15 to 18 minutes. Reduce heat to medium-low, add reserved shrimp and\n            mussels, tucking them down into the rice, and cook again without\n            stirring, until mussels have opened and rice is just tender, 5 to 7\n            minutes more. (Discard any mussels that don&apos;t open.)\n          </Typography>\n          <Typography>\n            Set aside off of the heat to let rest for 10 minutes, and then serve.\n          </Typography>\n        </CardContent>\n      </Collapse>\n    </Card>\n  );\n}",
+    "startLine": 29,
+    "endLine": 112,
+    "parentType": "export_statement",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 2,
+    "filePath": "repos/chaldal/src/components/card/RecipeReviewCard.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@32-78",
+    "type": "function_declaration",
+    "name": "LocationMarker",
+    "text": "function LocationMarker({ setLocation }) {\n  const [position, setPosition] = useState({\n    lat: 13,\n    lng: 12\n  });\n  const [locationName, setLocationName] = useState(\"\");\n\n  const map = useMapEvents({\n    click(e) {\n      setPosition(e.latlng);\n      map.flyTo(e.latlng, map.getZoom());\n      // map.locate()\n    },\n    //   locationfound(e) {\n    //     setPosition(e.latlng)\n    //     map.flyTo(e.latlng, map.getZoom())\n    //   },\n  });\n\n  useEffect(() => {\n    fetch(\n      `https://api.opencagedata.com/geocode/v1/json?q=${position.lat}+${position.lng}&key=4f729a1ff2824d3dbf07fb7be51456e7`\n    )\n      .then((response) => response.json())\n      .then((data) => {\n        if (data.results && data.results.length > 0) {\n          setLocation((curr) => {\n            return data.results[0].formatted;\n          });\n          setLocationName(data.results[0].formatted);\n\n        } else {\n          setLocationName(\"Unknown Location\");\n        }\n      })\n      .catch((error) => {\n        console.error(\"Error fetching location:\", error);\n        setLocationName(\"Error fetching location\");\n      });\n  }, [position]);\n\n  return position === null ? null : (\n    <Marker position={position} icon={customIcon}>\n      <Popup>You are here</Popup>\n    </Marker>\n  );\n}",
+    "startLine": 32,
+    "endLine": 78,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/map/MyMap.js",
+    "language": "js"
+  },
+  {
+    "id": "method_definition@40-44",
+    "type": "method_definition",
+    "name": "click",
+    "text": "click(e) {\n      setPosition(e.latlng);\n      map.flyTo(e.latlng, map.getZoom());\n      // map.locate()\n    }",
+    "startLine": 40,
+    "endLine": 44,
+    "parentType": "object",
+    "childrenTypes": [
+      "property_identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 8,
+    "filePath": "repos/chaldal/src/components/map/MyMap.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@80-114",
+    "type": "function_declaration",
+    "name": "MapComponent",
+    "text": "function MapComponent() {\n  const [locationSelectedFromMap, setLocationSelectedFromMap] = useState(null);\n  return (\n    <div className=\"map-and-form-container\" style={mapAndFormContainerStyle}>\n      <div className=\"map-container\" style={{ height: \"500px\", width: \"600px\" }}>\n        <MapContainer\n          center={[51.505, -0.09]}\n          zoom={20}\n          scrollWheelZoom={true}\n          style={{\n            height: \"500px\",\n            width: \"500px\",\n            // border: \"1px solid red\",\n            // backgroundColor: \"red\",\n          }}\n          zoomControl={false}\n        >\n          <TileLayer\n            attribution='&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'\n            url=\"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\"\n          />\n          <LocationMarker setLocation={setLocationSelectedFromMap} />\n          {/* <Marker position={[51.505, -0.09]} icon={customIcon}>\n            <Popup>pop up visible only after click</Popup>\n            <Tooltip>MOhakhali tooltip</Tooltip>\n          </Marker> */}\n        </MapContainer>\n      </div>\n      {\n        locationSelectedFromMap ? <AddressForm addressFromMap={locationSelectedFromMap} /> : <AddressForm />\n      }\n\n    </div>\n  );\n}",
+    "startLine": 80,
+    "endLine": 114,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/map/MyMap.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@24-50",
+    "type": "function_declaration",
+    "name": "AddressModal",
+    "text": "function AddressModal({ isModalOpen, setIsModalOpen }) {\n  const handleClose = () => setIsModalOpen(false);\n  const closeAddressModal = () => {\n    return setIsModalOpen(false);\n  }\n\n  return (\n    <Modal\n      aria-labelledby=\"transition-modal-title\"\n      aria-describedby=\"transition-modal-description\"\n      open={isModalOpen}\n      onClose={handleClose}\n      closeAfterTransition\n      BackdropComponent={Backdrop}\n      BackdropProps={{\n        timeout: 500,\n      }}\n      disableScrollLock // Prevents scrolling behind the modal\n    >\n      <Fade in={isModalOpen}>\n        <Box sx={style}>\n          <MapComponent />\n        </Box>\n      </Fade>\n    </Modal>\n  );\n}",
+    "startLine": 24,
+    "endLine": 50,
+    "parentType": "export_statement",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 2,
+    "filePath": "repos/chaldal/src/components/modal/AddressModal.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@22-45",
+    "type": "function_declaration",
+    "name": "TransitionsModal",
+    "text": "function TransitionsModal({ isModalOpen, setIsModalOpen }) {\n  const handleClose = () => setIsModalOpen(false);\n\n  return (\n    <Modal\n      aria-labelledby=\"transition-modal-title\"\n      aria-describedby=\"transition-modal-description\"\n      open={isModalOpen}\n      onClose={handleClose}\n      closeAfterTransition\n      BackdropComponent={Backdrop}\n      BackdropProps={{\n        timeout: 500,\n      }}\n      disableScrollLock // Prevents scrolling behind the modal\n    >\n      <Fade in={isModalOpen}>\n        <Box sx={style}>\n          <ProductDetails />\n        </Box>\n      </Fade>\n    </Modal>\n  );\n}",
+    "startLine": 22,
+    "endLine": 45,
+    "parentType": "export_statement",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 2,
+    "filePath": "repos/chaldal/src/components/modal/TransitionsModel.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@7-140",
+    "type": "function_declaration",
+    "name": "AddressForm",
+    "text": "function AddressForm({ addressFromMap }) {\n  const { addDeliveryAddress } = useDeliveryAddressStore();\n  const [formData, setFormData] = useState({\n    city: '',\n    area: '',\n    floorNo: '',\n    flatNo: '',\n    name: '',\n    mobileNumber: '',\n    tags: [],\n  });\n\n  const [errors, setErrors] = useState({});\n\n  useEffect(() => {\n    setFormData({\n      ...formData,\n      area: addressFromMap,\n    })\n  }, [addressFromMap]);\n\n  const handleChange = (event) => {\n    const { name, value } = event.target;\n    setFormData({\n      ...formData,\n      [name]: value,\n    });\n  };\n\n  const handleCheckboxChange = (event) => {\n    const { name, checked } = event.target;\n    const updatedTags = checked\n      ? [...formData.tags, name]\n      : formData.tags.filter((tag) => tag !== name);\n    setFormData({\n      ...formData,\n      tags: updatedTags,\n    });\n  };\n\n  const handleSubmit = (event) => {\n    event.preventDefault();\n    const validationErrors = {};\n    if (!formData.city) {\n      validationErrors.city = 'City is required';\n    }\n    if (!formData.area) {\n      validationErrors.area = 'Area is required';\n    }\n    if (!formData.floorNo) {\n      validationErrors.floorNo = 'Floor No is required';\n    }\n    if (!formData.flatNo) {\n      validationErrors.flatNo = 'Flat No is required';\n    }\n    if (!formData.name) {\n      validationErrors.name = 'Name is required';\n    }\n    if (!formData.mobileNumber) {\n      validationErrors.mobileNumber = 'Mobile Number is required';\n    }\n\n    if (Object.keys(validationErrors).length === 0) {\n      // Form is valid, proceed with submitting\n      console.log('Submitted Data:', formData);\n      addDeliveryAddress(formData);\n      alert(\"Product Delivery Addresse Added Successfully\");\n      // You can proceed with saving data or any other action here\n    } else {\n      setErrors(validationErrors);\n    }\n  };\n\n  return (\n    <div className=\"container\">\n      <h2>Add New Address</h2>\n      <form onSubmit={handleSubmit}>\n        <div className='city-and-area'>\n          <div className=\"form-group\">\n            <label htmlFor=\"city\">City:</label>\n            <select id=\"city\" name=\"city\" value={formData.city} onChange={handleChange}>\n              <option value=\"\">Select City</option>\n              {\n                bangladeshDistricts.map((district) => {\n                  return <option value={district.name}>{district.name}</option>\n                })\n              }\n            </select>\n            {errors.city && <span className=\"error\">{errors.city}</span>}\n          </div>\n          <div className=\"form-group\">\n            <label htmlFor=\"area\">Area:</label>\n            <textarea id=\"area\" name=\"area\" rows=\"4\" value={formData.area} onChange={handleChange}></textarea>\n            {errors.area && <span className=\"error\">{errors.area}</span>}\n          </div>\n        </div>\n        <div className='floor-and-flat'>\n          <div className=\"form-group\">\n            <label htmlFor=\"floorNo\">Floor No:</label>\n            <input type=\"text\" id=\"floorNo\" name=\"floorNo\" value={formData.floorNo} onChange={handleChange} />\n            {errors.floorNo && <span className=\"error\">{errors.floorNo}</span>}\n          </div>\n          <div className=\"form-group\">\n            <label htmlFor=\"flatNo\">Flat No:</label>\n            <input type=\"text\" id=\"flatNo\" name=\"flatNo\" value={formData.flatNo} onChange={handleChange} />\n            {errors.flatNo && <span className=\"error\">{errors.flatNo}</span>}\n          </div>\n        </div>\n        <div className=\"form-group\">\n          <label htmlFor=\"name\">Name:</label>\n          <input type=\"text\" id=\"name\" name=\"name\" value={formData.name} onChange={handleChange} />\n          {errors.name && <span className=\"error\">{errors.name}</span>}\n        </div>\n        <div className=\"form-group\">\n          <label htmlFor=\"mobileNumber\">Mobile Number:</label>\n          <input type=\"text\" id=\"mobileNumber\" name=\"mobileNumber\" value={formData.mobileNumber} onChange={handleChange} />\n          {errors.mobileNumber && <span className=\"error\">{errors.mobileNumber}</span>}\n        </div>\n        <div className=\"form-group\">\n          <h4>Add a label:</h4>\n          <div className=\"tags\">\n            <input type=\"checkbox\" id=\"home\" name=\"home\" value=\"home\" checked={formData.tags.includes('home')} onChange={handleCheckboxChange} />\n            <label htmlFor=\"home\">Home</label>\n            <input type=\"checkbox\" id=\"office\" name=\"office\" value=\"office\" checked={formData.tags.includes('office')} onChange={handleCheckboxChange} />\n            <label htmlFor=\"office\">Office</label>\n            <input type=\"checkbox\" id=\"heart\" name=\"heart\" value=\"heart\" checked={formData.tags.includes('heart')} onChange={handleCheckboxChange} />\n            <label htmlFor=\"heart\">Heart</label>\n          </div>\n        </div>\n        <button type=\"submit\">Save</button>\n      </form>\n    </div>\n  );\n}",
+    "startLine": 7,
+    "endLine": 140,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/order/AddressForm.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@19-113",
+    "type": "function_declaration",
+    "name": "PlaceOrder",
+    "text": "function PlaceOrder() {\n  const [addressAdded, setAddressAdded] = useState(false);\n  const [isModalOpen, setIsModalOpen] = useState(false);\n  const [value, onChange] = useState(new Date());\n  const { deliveryAddress } = useDeliveryAddressStore();\n  const {totalPrice} = usetotalPriceOfProductsInCart();\n  const deliveryCharge = 0;\n  const amountToPay = totalPrice;\n  const navigate = useNavigate();\n\n  const openAddressModal = () => {\n    setIsModalOpen((curr) => !curr)\n  }\n\n  const handleProceed = () => {\n    alert(`Your order of taka ${totalPrice} has been placed successfully`)\n    navigate('ramadan');\n    \n  }\n\n  return (\n    <>\n    <div className=\"root-place-order\">\n      <div className=\"layer-one-address\">\n        <div className=\"address-slection-title\">\n          <IconButton>\n            <LocationOnIcon />\n            <Typography>\n              {deliveryAddress ? `Delivery Address` : `Select a delivery address`}\n            </Typography>\n          </IconButton>\n        </div>\n        {deliveryAddress ? (\n          <div className=\"address-container\">\n            <ul>\n              <li>City : {deliveryAddress.city}</li>\n              <li>\n                Area : {deliveryAddress.area}\n              </li>\n              <li>\n                Floor no : {deliveryAddress.floorNo}\n              </li>\n              <li> Flat no : {deliveryAddress.flatNo}</li>\n              <li> Moblie no : {deliveryAddress.mobileNumber}</li>\n            </ul>\n          </div>\n        ) : (\n          <div className=\"new-address-button\">\n            <IconButton onClick={openAddressModal}>\n              <AddIcon />\n              <Typography>New Address</Typography>\n            </IconButton>\n          </div>\n        )}\n      </div>\n      <div className=\"layer-two-delivery\">\n        <div className=\"time-slection-title\">\n          <IconButton>\n            <WatchLaterIcon />\n            <Typography>\n              {deliveryAddress\n                ? `Prefered Delivery Date`\n                : `Prefered Delivery Date`}\n            </Typography>\n          </IconButton>\n          <AddressModal />\n        </div>\n        {deliveryAddress ? (\n          <div style={{textAlign: \"center\", padding: \"5%\"}}>\n            <DateTimePicker onChange={onChange} value={value}/>\n          </div>\n        ) : (\n          <div className=\"slot-msg\">\n            Slot selection will be available after selection and address\n          </div>\n        )}\n      </div>\n      <div className=\"layer-three-message\">\n        <div className=\"next-page-payment-options\">\n          Payment options available on the next page\n        </div>\n        <div>৳{deliveryCharge} Delivery charge included</div>\n      </div>\n      <div className=\"layer-four-proceed\">\n        <div className=\"place-order-button\">\n          <PlaceOrderPart className=\"place-order\" deliveryAddress={(deliveryAddress && value) ? true : false} onClick={(deliveryAddress && value)? handleProceed : null}>৳{totalPrice}</PlaceOrderPart>\n          <AmountToPay className=\"amount-to-pay\" deliveryAddress={(deliveryAddress && value) ? true : false}>৳{totalPrice}</AmountToPay>\n        </div>\n      </div>\n      \n    </div>\n    <AddressModal isModalOpen={isModalOpen} setIsModalOpen={setAddressAdded} />\n    </>\n  );\n}",
+    "startLine": 19,
+    "endLine": 113,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/order/PlaceOrder.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@8-78",
+    "type": "function_declaration",
+    "name": "CartItem",
+    "text": "function CartItem({product, setTotalPriceOfAllItemsInCart}) {\n    const {updateProduct} = useProductStore();\n    const {itemsInCart, updateCount} = usecartItemCountStore();\n    const totalPrice = product.unitPrice * product.addedInCart;\n    const redeem = Math.ceil(product.unitPrice * product.addedInCart * product.discount / 100);\n    const offerPrice = totalPrice - redeem;\n\n    const removeItemFromCart = () => {\n        const modifiedProduct = {...product, addedInCart: 0};\n        \n        updateCount(itemsInCart-1);\n        updateProduct(modifiedProduct);\n    }\n    return (\n        <div className={styles.cartitemcontainer}>\n            <div className={styles.addremovebutton}>\n                <div className={styles.uparrow}>\n                    <KeyboardArrowUp fontSize='small' />\n                </div>\n                <div className={styles.productincart}>\n                    <Typography>\n                        {\n                            product.addedInCart\n                        }\n                    </Typography>\n                </div>\n                <div className={styles.downarrow}>\n                    <KeyboardArrowDown fontSize='small' />\n                </div>\n            </div>\n            <div className={styles.productdetails}>\n                <div className={styles.imageDetaisWrapper}>\n                    <div className={styles.imagecontainer}>\n                        <CardMedia\n                            component=\"img\"\n                            height=\"65px\"\n                            image={product.productImage}\n                            alt=\"prodcut\"\n                            className=\"product-image\"\n                        />\n                    </div>\n                    <div className={styles.titlepricecontainer}>\n                        <div className={styles.title}> {product.productName} </div>\n                        <div className={styles.priceweight}>\n                            <FontAwesomeIcon\n                                className='delivery-taka-icon' icon=\"fa-solid fa-bangladeshi-taka-sign\" />\n                            <span >{`${product.unitPrice}/ ${product.weight}`}</span>\n                        </div>\n                    </div>\n                </div>\n                <div>\n                    <div className={styles.priceweight}>\n                        <FontAwesomeIcon\n                            className='delivery-taka-icon' icon=\"fa-solid fa-bangladeshi-taka-sign\" />\n                        <span style={{color: \"red\"}}>{offerPrice}</span>\n                    </div>\n                    <div className={styles.priceweight}>\n                        <FontAwesomeIcon\n                            className='delivery-taka-icon' icon=\"fa-solid fa-bangladeshi-taka-sign\" />\n                        <span style={{textDecoration:\"line-through\"}}>{totalPrice}</span>\n                    </div>\n                </div>\n            </div>\n            <div className={styles.cancel} onClick={removeItemFromCart}>\n                <IconButton>\n                    <CancelOutlined />\n                </IconButton>\n            </div>\n        </div>\n    )\n}",
+    "startLine": 8,
+    "endLine": 78,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/shoppingCart/CartItem.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@21-43",
+    "type": "function_declaration",
+    "name": "CartMini",
+    "text": "function CartMini() {\n    const {updateShoppingCartStatus} = useShoppingCartStore();\n    const {itemsInCart} = usecartItemCountStore();\n    const handleShopingCart = ()=> {\n        updateShoppingCartStatus(true);\n    }\n    return (\n        <CartMiniContainer className='cart-mini' onClick={handleShopingCart}>\n            <div className='item-count' style={{backgroundColor: \"#f5fceb\", textAlign: \"center\"}}>\n                <IconButton sx={{color: \"red\"}}>\n                    <ShoppingBagIcon fontSize='medium' />\n                </IconButton>\n            </div>\n            <div>\n            <Typography className='counter' style={{fontSize: \"15px\", textAlign: \"center\"}}>\n                        {\n                            itemsInCart\n                        } items\n                    </Typography>\n            </div>\n        </CartMiniContainer>\n    )\n}",
+    "startLine": 21,
+    "endLine": 43,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/shoppingCart/CartMini.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@13-158",
+    "type": "function_declaration",
+    "name": "ShoppingCart",
+    "text": "function ShoppingCart() {\n  const [totalPriceOfAllItemsInCart, setTotalPriceOfAllItemsInCart] =\n    useState(0);\n  const { updateTotalPrice } = usetotalPriceOfProductsInCart();\n  const { open, updateShoppingCartStatus } = useShoppingCartStore();\n  const { itemsInCart } = usecartItemCountStore();\n  const { products } = useProductStore();\n  const navigate = useNavigate();\n  const cartImage =\n    \"https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-450/Default/components/header/ShoppingCart/images/emptyShoppingBag.png?q=low&webp=1&alpha=1\";\n\n  const closeShoppingCart = () => {\n    updateShoppingCartStatus(false);\n  };\n\n  const placeOrder = () => {\n    navigate('place-order');\n  }\n\n  useEffect(() => {\n    setTotalPriceOfAllItemsInCart(\n      products\n        .filter((product) => (product.addedInCart > 0 ? true : false))\n        .reduce((curr, cum) => {\n          const totalPrice = cum.addedInCart * cum.unitPrice;\n          const redeem = Math.ceil((totalPrice * cum.discount) / 100);\n          const offerPrice = totalPrice - redeem;\n          return curr + offerPrice;\n        }, 0)\n    );\n  });\n  useEffect(()=> {\n    updateTotalPrice(totalPriceOfAllItemsInCart)\n  }, [totalPriceOfAllItemsInCart]);\n  return (\n    <div\n      className=\"shopping-cart\"\n      style={\n        open\n          ? { transform: \"translateX(0%)\" }\n          : { transform: \"translateX(100%)\" }\n      }\n    >\n      <div className=\"header\">\n        <div className=\"item-count\">\n          <IconButton>\n            <ShoppingBagIcon fontSize=\"medium\" />\n            <Typography className=\"counter\">{itemsInCart} items</Typography>\n          </IconButton>\n        </div>\n        <div className=\"cart-close-button\">\n          <IconButton className=\"_close\" onClick={closeShoppingCart}>\n            <Typography>Close</Typography>\n          </IconButton>\n        </div>\n      </div>\n      <div\n        className=\"delivery-charge-info\"\n        style={\n          itemsInCart > 0\n            ? { backgroundColor: \"#104a0285\" }\n            : { backgroundColor: \"#aaa\" }\n        }\n      >\n        {itemsInCart <= 0 ? (\n          <div className=\"charge-message\">\n            {`Shop ৳400 more and save ৳10 fee`}\n          </div>\n        ) : (\n          <div className=\"charge-message-no-discount\">\n            {`You have reduced delivery charge`}\n          </div>\n        )}\n        <div className=\"info-item-container\">\n          <IconButton sx={{ color: \"white\" }}>\n            <FontAwesomeIcon\n              className=\"delivery-taka-icon\"\n              icon=\"fa-solid fa-bangladeshi-taka-sign\"\n            />\n            <Typography>{itemsInCart > 0 ? `39` : `49`}</Typography>\n            <InfoIcon fontSize=\"small\" />\n          </IconButton>\n        </div>\n      </div>\n      <div\n        className=\"item-container\"\n        style={itemsInCart <= 0 ? { justifyContent: \"center\" } : null}\n      >\n        {itemsInCart > 0 ? (\n          products\n            .filter((product) => {\n              return product.addedInCart > 0 ? true : false;\n            })\n            .map((product, index) => {\n              return (\n                <CartItem\n                  product={product}\n                  setTotalPriceOfAllItemsInCart={setTotalPriceOfAllItemsInCart}\n                />\n              );\n            })\n        ) : (\n          <>\n            <div>\n              <img src={cartImage} />\n            </div>\n            <div style={{ textAlign: \"center\" }}>\n              Your shopping bag is empty. Start shopping\n            </div>\n          </>\n        )}\n        {/* <>\n                    <div>\n                        <img src={cartImage} />\n                    </div>\n                    <div>\n                        Your shopping bag is empty. Start shopping\n                    </div>\n                </> */}\n        {/* <CartItem /> */}\n      </div>\n      <div className=\"footer\">\n        {itemsInCart <= 0 ? (\n          <div className=\"hotline\">Hotline : 16710</div>\n        ) : (\n          <div className=\"place-order-container-wrapper\">\n            <div className=\"place-order-container\">\n\n              <div className=\"place-order\"\n                onClick={placeOrder}\n              >Place Order</div>\n\n              <div className=\"order-price\">\n                <FontAwesomeIcon\n                  className=\"delivery-taka-icon\"\n                  icon=\"fa-solid fa-bangladeshi-taka-sign\"\n                />\n                {totalPriceOfAllItemsInCart}\n              </div>\n            </div>\n          </div>\n        )}\n      </div>\n    </div>\n  );\n}",
+    "startLine": 13,
+    "endLine": 158,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/shoppingCart/ShoppingCart.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@38-198",
+    "type": "function_declaration",
+    "name": "Sidebars",
+    "text": "function Sidebars() {\n  const [isOpen, setIsOpen] = useState(true);\n  const { open } = useSidebarStore();\n  const { categoryName, updateCategory } = usecategoryStore();\n  const { subCategoryName, updateSubCategory } = useSubCategoryStore();\n  const { subSubCategoryName, updateSubSubCategory } = useSubSubCategoryStore();\n  const navigate = useNavigate();\n\n  // const [selectedCategory, setSelectedCategory] = useState(null);\n  // const [selectedSubcategory, setSelectedSubcategory] = useState(null);\n  // const [selectedSubSubCategory, setSelectedSubSubCategory] = useState(null);\n\n  const [selectedCategory, setSelectedCategory] = useState(() => {\n    // Initialize with value from localStorage or null if not found\n    return categoryName;\n  });\n  const [selectedSubcategory, setSelectedSubcategory] = useState(() => {\n    // Initialize with value from localStorage or null if not found\n    return subCategoryName;\n  });\n  const [selectedSubSubCategory, setSelectedSubSubCategory] = useState(() => {\n    // Initialize with value from localStorage or null if not found\n    return subSubCategoryName;\n  });\n\n  const handleCategoryClick = (categoryIndex, category) => {\n    navigate(category.path);\n    setSelectedCategory(\n      //selectedCategory === categoryIndex ? null : categoryIndex\n      categoryIndex\n    );\n    setSelectedSubcategory(null);\n    setSelectedSubSubCategory(null); // Reset subcategory selection\n  };\n\n  const handleSubcategoryClick = (event, subcategory, path) => {\n    navigate(path);\n    setSelectedSubcategory(subcategory);\n    setSelectedSubSubCategory(null);\n  };\n\n  const handleSubSubCategoryClick = (event, subSubCategory, path) => {\n    event.stopPropagation();\n    navigate(path);\n    setSelectedSubSubCategory(subSubCategory);\n  };\n\n  const toggleSidebar = () => {\n    setIsOpen(!isOpen);\n  };\n\n  const setIcon = (subCategories, _selectedCategory, index) => {\n    return subCategories ? (\n      _selectedCategory === index ? (\n        <KeyboardArrowDownIcon />\n      ) : (\n        <KeyboardArrowUpIcon />\n      )\n    ) : null;\n  };\n\n  useEffect(() => {\n    updateCategory(selectedCategory);\n  }, [selectedCategory]);\n\n  useEffect(() => {\n    updateSubCategory(selectedSubcategory);\n  }, [selectedSubcategory]);\n\n  useEffect(() => {\n    updateSubSubCategory(selectedSubSubCategory);\n  }, [selectedSubSubCategory]);\n\n  // useEffect(() => {\n  //   setSelectedCategory(categoryName);\n  //   setSelectedSubcategory(subCategoryName);\n  //   setSelectedSubSubCategory(subSubCategoryName);\n  // }, [categoryName, subCategoryName, subSubCategoryName]);\n\n  return (\n    <CustomSidebar theme={theme} open={open} className={`sidebar ${isOpen ? \"open\" : \"\"}`}>\n      {/* <button className=\"toggle-button\" onClick={toggleSidebar}>{isOpen ? 'Close' : 'Open'}</button> */}\n      {categories.map((category, index) => (\n\n        <div key={index}>\n          <div\n            className=\"category\"\n            onClick={() => handleCategoryClick(index, category)}\n            style={{\n              //backgroundColor: \"#aaa\"\n            }}\n          >\n            {\n              category.icon ? <img width={\"18px\"} src={category.icon} style={{ marginRight: \"3px\" }} /> : null\n            }\n\n            {\n              categories[categoryName] && category.name === categories[categoryName].name ? <span style={{ fontWeight: '900', color: \"#e1a308\" }}>{category.name}</span> : category.name}\n\n\n            <span className=\"arrow\">\n              {setIcon(category.subCategories, selectedCategory, index)}\n            </span>\n          </div>\n          {selectedCategory === index && category.subCategories && (\n            <ul\n              className=\"subcategory-list\"\n              style={{\n                //backgroundColor: 'red',\n                borderLeft: '1px solid gray',\n                marginLeft: '18px',\n              }}\n            >\n              {category.subCategories &&\n                category.subCategories.map((subcategory, subIndex) => (\n                  <li\n                    key={subIndex}\n                    onClick={(event) =>\n                      handleSubcategoryClick(event, subcategory.name, subcategory.path)\n                    }\n                  >\n                    {\n                    }\n                    {subCategoryName && subcategory.name === subCategoryName?<span style={{ fontWeight: '900', color: \"#e1a308\" }}>{subcategory.name}</span> : subcategory.name \n                    \n                  }\n                    {subcategory.subCategories && (\n                      <ul className=\"sub-subcategory-list\" style={{\n                        borderLeft: '1px solid gray'\n                      }}>\n                        {\n                        \n                        }\n                        {selectedSubcategory === subcategory.name &&\n                          subcategory.subCategories.map(\n                            (sub, index) => (\n                              <li\n                                key={`${index}xxx`}\n                                onClick={(event) =>\n                                  handleSubSubCategoryClick(event, sub.name, sub.path)\n                                }\n                              >\n                                {subSubCategoryName && sub.name === subSubCategoryName ?\n                                <span style={{ fontWeight: '900', color: \"#e1a308\" }}>{sub.name}</span> : sub.name  \n                              }\n                              </li>\n                            )\n                            // <li>Sub-subcategory 2</li>\n                            // <li>Sub-subcategory 3</li>\n                          )}\n                      </ul>\n                    )}\n                  </li>\n                ))}\n            </ul>\n          )}\n        </div>\n      ))}\n    </CustomSidebar>\n  );\n}",
+    "startLine": 38,
+    "endLine": 198,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/components/sidebar/sidebar.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@16-136",
+    "type": "function_declaration",
+    "name": "Offer",
+    "text": "function Offer() {\n  const { open } = useSidebarStore();\n  const { categoryName } = usecategoryStore();\n  const { subCategoryName, updateSubCategory } = useSubCategoryStore();\n  const { subSubCategoryName, updateSubSubCategory } = useSubSubCategoryStore();\n  const { products } = useProductStore();\n  const handleCategoryClick = (category) => {\n\n  };\n\n  const productsExistsForCategory = (product, categoryName) => {\n    console.log(\"product : \", product);\n    const isPopular = product.popular && categories[categoryName].name==='Popular';\n    const isRamadan = product.ramadan && categories[categoryName].name==='Ramadan';\n    const isCategory = product.category === categories;\n    const isExist = isPopular || isRamadan || isCategory;\n    console.log(isPopular, isRamadan, isCategory, isExist);\n    //[categoryName].name\n    // const isExist = ( || (product.category==='Popular' && product.popular) || (product.category=== 'Ramadan' && product.ramadan))\n    // console.log(\"isExist : \", isExist);\n    // console.log(product.category === categories[categoryName].name, product.category==='Popular' && product.popular, product.category=== 'Ramadan' && product.ramadan)\n    return isExist;\n  }\n\n  return (\n    <div>\n      <Contents theme={theme} className=\"contents\" open={open}>\n        <AutoCarousel />\n        <div className=\"hierarchy\">\n          {categoryName && (\n            <span\n              className=\"category\"\n              style={{\n                fontWeight: subCategoryName ? \"normal\" : \"bold\",\n                color: subCategoryName ? \"#000\" : \"#777\",\n                cursor: subCategoryName ? \"pointer\" : \"none\",\n              }}\n              onClick={handleCategoryClick(categories[categoryName].name)}\n            >\n              {categories[categoryName].name}\n            </span>\n          )}\n          {subCategoryName && (\n            <>\n              <span className=\"separator\"> {\"\\u003E\"} </span> &nbsp;\n              <span\n                className=\"subCategory\"\n                style={{\n                  fontWeight: subSubCategoryName ? \"normal\" : \"bold\",\n                  color: subSubCategoryName ? \"#000\" : \"#777\",\n                  cursor: subCategoryName ? \"pointer\" : \"none\",\n                }}\n              >\n                {subCategoryName}\n              </span>\n              &nbsp;\n              <span></span>\n            </>\n          )}\n          {subSubCategoryName && (\n            <>\n              <span className=\"separator\"> {\"\\u003E\"}</span>&nbsp;\n              <span\n                className=\"subSubCategory\"\n                style={{ fontWeight: \"bold\", color: \"#777\" }}\n              >\n                {subSubCategoryName}\n              </span>\n            </>\n          )}\n        </div>\n        <ProductShowCase className=\"product-showcase\">\n\n          {/* //category te clik korlei product show korbe karon er kuno sub category nai */}\n          {\n            categoryName && !subCategoryName && !subSubCategoryName && !categories[categoryName].subCategories && products.filter((product) => {\n              console.log(product.category , \" \", categories[categoryName].name )\n              return productsExistsForCategory(product, categoryName) ? true : false;\n            }).map((product) => {\n              // console.log(\"entered\");\n             return <ProductCard product={product}/>\n            })\n          }\n\n          {\n             categoryName && !subCategoryName && !subSubCategoryName && categories[categoryName].subCategories?.map((subCategory)=> {\n              const subCategoriesInStock = products?.filter((product) => {\n                //console.log(\"product subcategory : \", product.subCategory);\n                return product.subCategory === subCategory.name ? true : false;\n              })\n              return subCategoriesInStock.length ? <ProductCategoryCard product={subCategoriesInStock[0]} isSubCategory={true}/> : null;\n            }) \n          }\n\n          {\n            categoryName && subCategoryName && !subSubCategoryName && categories[categoryName].subCategories?.map((subCategory) => {\n              return subCategory.subCategories?.map((subSubCategory) => {\n\n                const subSubCategoryInStock = products?.filter((product) => {\n                  // console.log(subSubCategory , \"  product:  \", product);\n                  return subSubCategory.name === product.subsubCategory? true : false;\n                });\n                //console.log(\"subSubCategoryInStock \", subSubCategoryInStock);\n                return subSubCategoryInStock.length ? <ProductCategoryCard product={subSubCategoryInStock[0]} isSubSubCategory={true}/> : null;\n\n              })\n            })\n          }\n          {\n            subSubCategoryName && products?.filter((product) => {\n              return product.subsubCategory === subSubCategoryName ? true : false\n            }).map((product) => {\n              return <ProductCard product={product} />\n            }\n            )\n          }\n        </ProductShowCase>\n      </Contents>\n    </div>\n  );\n}",
+    "startLine": 16,
+    "endLine": 136,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/pages/Offer.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@7-17",
+    "type": "function_declaration",
+    "name": "OrderPlacement",
+    "text": "function OrderPlacement() {\n  const { open } = useSidebarStore();\n\n  return (\n    <div>\n      <Contents theme={theme} className=\"contents\" open={open}>\n        <PlaceOrder />\n      </Contents>\n    </div>\n  );\n}",
+    "startLine": 7,
+    "endLine": 17,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/pages/OrderPlacement.js",
+    "language": "js"
+  },
+  {
+    "id": "function_declaration@9-27",
+    "type": "function_declaration",
+    "name": "SearchResultPage",
+    "text": "function SearchResultPage() {\n  const { open } = useSidebarStore();\n  const { searchedProducts } = usesearchedProductStore();\n\n  return (\n    <div>\n      <Contents theme={theme} className=\"contents\" open={open}>\n        {\n            searchedProducts && searchedProducts.map((product) => {\n                return <ProductCard product={product}/>\n            })\n        }\n        {\n            !searchedProducts && <div style={{margin: 'auto'}}> No products found</div>\n        }\n      </Contents>\n    </div>\n  );\n}",
+    "startLine": 9,
+    "endLine": 27,
+    "parentType": "program",
+    "childrenTypes": [
+      "identifier",
+      "formal_parameters",
+      "statement_block"
+    ],
+    "depth": 1,
+    "filePath": "repos/chaldal/src/pages/SearchResultPage.js",
+    "language": "js"
   }
 ]

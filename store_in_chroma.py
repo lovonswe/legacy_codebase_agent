@@ -34,6 +34,8 @@ for i, chunk in enumerate(data):
         metadatas=[chunk["metadata"]],
         embeddings=[chunk["embedding"]]
     )
+    print(f"Stored chunk {i+1}/{len(data)}: {chunk['metadata']['type']} ({chunk['metadata']['startLine']}–{chunk['metadata']['endLine']})")
+    print(collection.get(ids=[f"chunk-{i}"]))
 # Explicitly persist to disk
 # client.persist()
 
@@ -50,11 +52,11 @@ print("querying...")
 model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
 # Natural language query
-query = "Find the function that merges multiple JavaScript objects."
+query = "tell me about the Homepage"
 embedding = model.encode(query).tolist()
 
 # Perform semantic search
-results = collection.query(query_embeddings=[embedding], n_results=5)
+results = collection.query(query_embeddings=[embedding], n_results=10)
 print(results)
 
 # Show results
@@ -63,8 +65,8 @@ for text, metadata in zip(results["documents"][0], results["metadatas"][0]):
     print(text[:300])  # Preview
 
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))  # Replace with your actual key
-
+genai.configure(api_key="AIzaSyBXvW4XfrL-uIIaAYkCHGxk4yN3_CGXPJw")  # Replace with your actual key
+print(os.getenv("GEMINI_API_KEY"))
 # Initialize model
 model = genai.GenerativeModel("gemini-1.5-flash-latest")
 

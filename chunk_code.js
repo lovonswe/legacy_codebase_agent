@@ -6,7 +6,7 @@ const JavaScript = require('tree-sitter-javascript');
 const parser = new Parser();
 parser.setLanguage(JavaScript);
 
-const code = fs.readFileSync('legacy/big_file.js', 'utf8');
+const code = fs.readFileSync('legacy/big_file_react.js', 'utf8');
 const tree = parser.parse(code);
 
 console.log(JSON.stringify(tree.language.nodeTypeInfo.map(({type}) => type)));
