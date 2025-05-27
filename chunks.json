@@ -1,0 +1,38 @@
+[
+  {
+    "type": "function_declaration",
+    "text": "function curry(fn) {\n    return function curried(...args) {\n      if (args.length >= fn.length) {\n        return fn.apply(this, args);\n      } else {\n        return function(...args2) {\n          return curried.apply(this, args.concat(args2));\n        };\n      }\n    };\n  }",
+    "startLine": 79,
+    "endLine": 89
+  },
+  {
+    "type": "function_declaration",
+    "text": "function compose(...fns) {\n    return function(x) {\n      return fns.reduceRight((v, f) => f(v), x);\n    };\n  }",
+    "startLine": 92,
+    "endLine": 96
+  },
+  {
+    "type": "function_declaration",
+    "text": "function memoize(fn) {\n    const cache = new Map();\n    return function(...args) {\n      const key = JSON.stringify(args);\n      if (cache.has(key)) return cache.get(key);\n      const result = fn.apply(this, args);\n      cache.set(key, result);\n      return result;\n    };\n  }",
+    "startLine": 99,
+    "endLine": 108
+  },
+  {
+    "type": "function_declaration",
+    "text": "function debounce(fn, delay) {\n    let timeoutId;\n    return function(...args) {\n      clearTimeout(timeoutId);\n      timeoutId = setTimeout(() => fn.apply(this, args), delay);\n    };\n  }",
+    "startLine": 111,
+    "endLine": 117
+  },
+  {
+    "type": "function_declaration",
+    "text": "function throttle(fn, limit) {\n    let inThrottle;\n    return function(...args) {\n      if (!inThrottle) {\n        fn.apply(this, args);\n        inThrottle = true;\n        setTimeout(() => inThrottle = false, limit);\n      }\n    };\n  }",
+    "startLine": 120,
+    "endLine": 129
+  },
+  {
+    "type": "class_declaration",
+    "text": "class LinkedList {\n    constructor() {\n      this.head = null;\n      this.tail = null;\n      this.length = 0;\n    }\n  \n    // Add to end of list\n    append(value) {\n      const newNode = { value, next: null };\n      if (!this.head) {\n        this.head = newNode;\n        this.tail = newNode;\n      } else {\n        this.tail.next = newNode;\n        this.tail = newNode;\n      }\n      this.length++;\n    }\n  \n    // Add to beginning of list\n    prepend(value) {\n      const newNode = { value, next: this.head };\n      this.head = newNode;\n      if (!this.tail) this.tail = newNode;\n      this.length++;\n    }\n  \n    // Remove by value\n    \n  }",
+    "startLine": 136,
+    "endLine": 166
+  }
+]

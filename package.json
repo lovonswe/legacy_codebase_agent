@@ -1,0 +1,20 @@
+{
+  "name": "ts-legacy-agent-big-file",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.9.0",
+    "dotenv": "^16.5.0",
+    "openai": "^4.103.0",
+    "tree-sitter": "^0.21.1",
+    "tree-sitter-javascript": "^0.23.1"
+  }
+}

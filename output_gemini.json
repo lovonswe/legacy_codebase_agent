@@ -1,0 +1,32 @@
+[
+  {
+    "metadata": {
+      "type": "function_declaration",
+      "startLine": 79,
+      "endLine": 89
+    },
+    "text": "function curry(fn) {\n    return function curried(...args) {\n      if (args.length >= fn.length) {\n        return fn.apply(this, args);\n      } else {\n        return function(...args2) {\n          return curried.apply(this, args.concat(args2));\n        };\n      }\n    };\n  }",
+    "embedding": [
+      0.023,
+      0.056,
+      0.012,
+      0.087,
+      0.112,
+      0.045,
+      0.091,
+      0.034,
+      0.101,
+      0.078,
+      0.065,
+      0.134,
+      0.051,
+      0.089,
+      0.121,
+      0.029,
+      0.067,
+      0.105,
+      0.038,
+      0.072
+    ]
+  }
+]
